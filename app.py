@@ -12,9 +12,9 @@ model = load_model('model.h5')
 model.make_predict_function()
 
 def predict_label(img_path):
-#    i = image.load_img(img_path, target_size=(150,150))
-#    i = image.img_to_array(i)/255.0
-#    i = i.reshape(-1, 150,150,1)
+    i = image.load_img(img_path, target_size=(150,150))
+    i = image.img_to_array(i)/255.0
+    i = i.reshape(-1, 150,150,1)
 #    px = model.predict(i)
 #    p=np.argmax(px, axis=1)
 #    return 'OK' if px[0][0] > 0.5 else 'NOK'
@@ -35,8 +35,7 @@ def get_output():
         img = request.files['my_image']
         img_path = "static/" + img.filename	
         img.save(img_path)
-
-# 		 p = predict_label(img_path)
+        p = predict_label(img_path)
 
 # 	return render_template("index.html", prediction = p, img_path = img_path)
     return "okindex.html"
