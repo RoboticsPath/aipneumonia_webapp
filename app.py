@@ -35,7 +35,7 @@ def get_output():
         img = request.files['my_image']
         img_path = "static/" + img.filename	
         img.save(img_path)
-        #p = predict_label(img_path)
+        p = predict_label(img_path)
     return render_template("index.html", prediction = "OKO", img_path = img_path)
     #return "okindex.html"
 
