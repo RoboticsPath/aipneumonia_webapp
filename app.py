@@ -24,9 +24,7 @@ dic = {0 : 'OK', 1 : 'NOT OK'}
 ## # # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
-    return "Hello!!"
- 
-# 	return render_template("index.html")
+  	return render_template("index.html")
 
 #@app.route("/about")
 #def about_page():
