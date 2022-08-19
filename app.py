@@ -31,17 +31,15 @@ def main():
 
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
- 	if request.method == 'POST':
- 		 img = request.files['my_image']
-
- 		 img_path = "static/" + img.filename	
+    if request.method == 'POST':
+        img = request.files['my_image']
+        img_path = "static/" + img.filename	
 # 		 img.save(img_path)
 
 # 		 p = predict_label(img_path)
 
 # 	return render_template("index.html", prediction = p, img_path = img_path)
-    return render_template("index.html", prediction = "OKO", img_path = img_path)
-
+    return "okindex.html"
 
 if __name__ =='__main__':
  	app.debug = True
