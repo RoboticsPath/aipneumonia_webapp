@@ -34,7 +34,7 @@ def get_output():
     if request.method == 'POST':
         img = request.files['my_image']
         img_path = "static/" + img.filename	
-# 		 img.save(img_path)
+        img.save(img_path)
 
 # 		 p = predict_label(img_path)
 
