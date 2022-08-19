@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask
+#, render_template, request
 #from tensorflow.keras.models import load_model
 #from tensorflow.keras.preprocessing import image
 #import numpy as np
@@ -23,7 +24,9 @@ dic = {0 : 'OK', 1 : 'NOT OK'}
 ## # # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
- 	return render_template("index.html")
+    return "Hello!!"
+ 
+# 	return render_template("index.html")
 
 #@app.route("/about")
 #def about_page():
