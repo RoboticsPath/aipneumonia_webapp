@@ -26,7 +26,7 @@ def main():
 
 @app.route("/about")
 def about_page():
- 	return "Done By: Amr Aboushousha & Lamees El-Bakr"
+    return "Done By: Amr Aboushousha & Lamees El-Bakr"
 
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
@@ -35,7 +35,7 @@ def get_output():
         img_path = "static/" + img.filename	
         img.save(img_path)
         p = predict_label(img_path)
-    return render_template("index.html", prediction = P, img_path = img_path)
+    return render_template("index.html", prediction = p, img_path = img_path)
     #return "okindex.html"
 
 if __name__ =='__main__':
