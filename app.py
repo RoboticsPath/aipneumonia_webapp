@@ -15,19 +15,18 @@ def predict_label(img_path):
     i = image.load_img(img_path, target_size=(150,150))
     i = image.img_to_array(i)/255.0
     i = i.reshape(-1, 150,150,1)
-#    px = model.predict(i)
-#    p=np.argmax(px, axis=1)
-#    return 'OK' if px[0][0] > 0.5 else 'NOK'
-    return "OKO"
+    px = model.predict(i)
+    p=np.argmax(px, axis=1)
+    return 'Initial Diagnosis: OK' if px[0][0] > 0.5 else 'Initial Diagnosins: NOK'
 
 ## # # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
     return render_template("index.html")
 
-#@app.route("/about")
-#def about_page():
-# 	return "Please subscribe  Artificial Intelligence Hub..!!!"
+@app.route("/about")
+def about_page():
+ 	return "Done By: Amr Aboushousha & Lamees El-Bakr"
 
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
@@ -36,7 +35,7 @@ def get_output():
         img_path = "static/" + img.filename	
         img.save(img_path)
         p = predict_label(img_path)
-    return render_template("index.html", prediction = "OKO", img_path = img_path)
+    return render_template("index.html", prediction = P, img_path = img_path)
     #return "okindex.html"
 
 if __name__ =='__main__':
